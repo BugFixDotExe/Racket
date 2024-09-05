@@ -1,0 +1,74 @@
+body {
+    background-color: #021526;
+    color: #FFF;
+    margin: 0;
+    align-items: center;
+    .ibm-plex-mono-bold {
+        font-family: "IBM Plex Mono", monospace;
+        font-weight: 700;
+        font-style: normal;
+    }
+}
+
+.book-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 50px;
+    padding: 20px;
+    background-color: #02233e;
+    border-radius: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+.book-cover {
+    background-color: #021526;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    text-align: center;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+}
+
+.book-blob {
+    margin: 150px 10px 0 10px;
+    border-radius: 30px;
+}
+
+.book-title {
+    margin-top: 0;
+}
+
+.book-summary-heading {
+    margin-bottom: 10px;
+}
+
+.book-summary {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.buy h2 {
+    margin: 20px 0;
+    color: #4CAF50;
+}
+
+.buy button {
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #FF5722;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy button:hover {
+    background-color: darkred;
+}
+

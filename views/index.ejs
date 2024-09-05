@@ -1,0 +1,26 @@
+
+    <meta charset="utf-8">
+    <title>Racket</title>
+    <link href= "/public/assets/styles.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <header>
+        <h1>Racket</h1>
+    </header>
+
+    <div class="input-form">
+         <h2 class="switch">What's our next book?</h2>
+        <form action="/user_input" method="post">
+            <input type="text" id="uinput" name="uinput" placeholder="Message Racket" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+      var Typed = new Typed('.switch', {
+            strings: ["The Perfect Book for Every Mood", "Unlock Your Next Literary Journey!", "What Will You Read Next?", "Your Next Favorite Read Awaits!"],
+            typeSpeed: 100,
+            backSpeed:100,
+            loop:true
+        });
+    </script>
+

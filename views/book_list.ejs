@@ -1,0 +1,68 @@
+
+    	 <link href= "/public/assets/book_list.css" rel="stylesheet" type="text/css" />
+    	  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<!--    <script>
+        // Function to set a cookie
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+
+        // Function to get a cookie by name
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+
+        // Function to check if the user is visiting for the first time
+        function checkFirstVisit() {
+            var hasVisited = getCookie("hasVisited");
+            if (!hasVisited) {
+                // This is the first visit
+                alert("Welcome to our website for the first time!");
+                // Set the cookie to indicate that the user has visited
+                setCookie("hasVisited", "true", 365);
+            } else {
+                // The user has visited before
+                alert("Welcome back!");
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = checkFirstVisit;
+    </script>-->
+
+<div class="card-container">
+    <% books.forEach(book => { %>
+        <div class="card" data-description="<%= book.description %>" data-author="<%= book.author %>">
+            <img src="<%= book.url %>" alt="Book cover for <%= book.title %>" class="card-image">
+        </div>
+    <% }); %>
+</div>
+
+
+<script>
+$(document).ready(function (){
+
+    $('.card').on('mouseenter', function (){
+        const description = $(this).data('description');
+        const author = $(this).data('author');
+        console.log(`Blue Pill go brrr! Title: ${description}, Author: ${author}`);
+    })
+    .on('mouseleave', function(){
+        const description = $(this).data('description');
+        console.log(description);
+    });
+});
+</script>

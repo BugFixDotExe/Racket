@@ -1,0 +1,36 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 20px;
+    height: 1915px;
+}
+
+body {
+    background-color: #021526;
+    color: #FFF;
+    margin: 0;
+    align-items: center;
+}
+
+.card {
+    background-color: #021526;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}

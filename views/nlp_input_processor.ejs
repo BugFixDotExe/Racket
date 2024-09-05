@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjs/lib/browser/math.js"></script>
+
+    <div id="result"></div>
+
+    <script>
+        const sentence1 = 'I need book on recovering from depression';
+        const sentence2 = 'I am currently suffering from depression i need books to combat it';
+
+        async function getSimilarity() {
+            const model = await use.load();
+            const embeddings = await model.embed([sentence1, sentence2]);
+
+            const encoding1 = embeddings.arraySync()[0];
+            const encoding2 = embeddings.arraySync()[1];
+
+            // Calculate cosine similarity
+            const dotProduct = math.dot(encoding1, encoding2);
+            const norm1 = math.norm(encoding1);
+            const norm2 = math.norm(encoding2);
+            const similarityScore = dotProduct / (norm1 * norm2);
+
+            document.getElementById('result').innerText = `Similarity score: ${similarityScore.toFixed(2)}`;
+            console.log(`Similarity Score: ${similarityScore}`);
+        }
+
+        getSimilarity();
+    </script>
