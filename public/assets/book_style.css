@@ -34,6 +34,10 @@ body {
     height: auto;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
 .book-blob {
     margin: 150px 10px 0 10px;
     border-radius: 30px;
@@ -71,4 +75,3 @@ body {
 .buy button:hover {
     background-color: darkred;
 }
-

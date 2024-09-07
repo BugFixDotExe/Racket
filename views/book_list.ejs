@@ -1,6 +1,8 @@
 
     	 <link href= "/public/assets/book_list.css" rel="stylesheet" type="text/css" />
     	  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+
 <!--    <script>
         // Function to set a cookie
         function setCookie(name, value, days) {
@@ -45,7 +47,7 @@
 
 <div class="card-container">
     <% books.forEach(book => { %>
-        <div class="card" data-description="<%= book.description %>" data-author="<%= book.author %>">
+        <div class="card" data-bookid="<%= book.book_id %>" data-title="<%= book.title %>" data-description="<%= book.description %>" data-author="<%= book.author %>">
             <img src="<%= book.url %>" alt="Book cover for <%= book.title %>" class="card-image">
         </div>
     <% }); %>
@@ -60,9 +62,15 @@ $(document).ready(function (){
         const author = $(this).data('author');
         console.log(`Blue Pill go brrr! Title: ${description}, Author: ${author}`);
     })
+    .on('click', function () {
+        const id = $(this).data('bookid');
+        console.log(`bookID: ${id}`);
+        window.location.href = `/book_detail/${id}`;
+        })
     .on('mouseleave', function(){
         const description = $(this).data('description');
         console.log(description);
     });
 });
 </script>
+
