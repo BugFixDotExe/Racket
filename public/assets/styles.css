@@ -1,27 +1,25 @@
 body {
-    background-color: #021526;
     padding: 0;
-    margin: 0; /* Removed margin-left: 90px; for a more uniform layout */
+    margin: 0;
+/*    background: rgb(28,8,17);
+    background: radial-gradient(circle, rgba(28,8,17,1) 0%, rgba(17,56,102,1) 100%);*/
+background: rgb(59,45,51);
+background: radial-gradient(circle, rgba(59,45,51,1) 0%, rgba(14,37,65,1) 100%);
+    color: white;
+    font-family: 'Arial', sans-serif;
 }
 
 h1 {
-    color: red;
+    color: white
     text-align: left;
     margin-bottom: 80px;
-    padding-left: 10px; /* Added padding for better alignment */
+    padding-left: 30px;
 }
 
 h2 {
     text-align: center;
     color: white;
-    padding-bottom: 10px; /* Added padding for better alignment */
-}
-
-.emotion-card {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px; /* Reduced gap for a tighter layout */
-    margin: 30px 100px 0 100px; /* Combined margin properties */
+    padding-bottom: 10px;
 }
 
 .card-image {
@@ -47,16 +45,6 @@ h2 {
     height: 300px;
 }
 
-.sad-card, .depressed-card, .happy-card {
-    background-color: #000;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-    max-width: 300px;
-    text-align: center;
-    height: 300px;
-}
-
 .input-form {
     display: grid;
     grid-template-columns: repeat(5, 2fr);
@@ -66,11 +54,10 @@ h2 {
 
 
 .input-form #uinput {
-    border-radius: 20px;
+    border-radius: 4px;
     width: 550px;
-    height: 30px;
-    background-color: white;
-    padding-left: 10px; /* Added padding for better text alignment */
+    height: 40px;
+    padding-left: 10px;
 }
 
 form {
@@ -89,7 +76,15 @@ h2 {
 }
 button {
     margin-left: 20px;
-    width: 90px;
-    height: 30px;
-    border-radius: 25px;
+    height: 47px;
+    width: 150px;
+    border-radius: 4px;
+    background-color: #ffcc00;
+    border: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+.switch {height: 50px;}

@@ -30,8 +30,9 @@ body {
 }
 
 .card-image {
+    margin-top: 80px;
     width: 100%;
-    height: auto;
+    height: 919px;
 }
 
 img {

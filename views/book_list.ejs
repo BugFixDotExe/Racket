@@ -47,12 +47,13 @@
 
 <div class="card-container">
     <% books.forEach(book => { %>
-        <div class="card" data-bookid="<%= book.book_id %>" data-title="<%= book.title %>" data-description="<%= book.description %>" data-author="<%= book.author %>">
-            <img src="<%= book.url %>" alt="Book cover for <%= book.title %>" class="card-image">
-        </div>
+        <% book.data.forEach(dataBook => { %> <!-- Iterate over the data array -->
+            <div class="card" data-bookid="<%= dataBook.book_id %>" data-title="<%= dataBook.title %>" data-description="<%= dataBook.description %>" data-plot="<%= dataBook.plot %>" data-author="<%= dataBook.author %>">
+                <img src="<%= dataBook.url %>" alt="Book cover for <%= dataBook.title %>" class="card-image" loading='lazy'>
+            </div>
+        <% }); %>
     <% }); %>
 </div>
-
 
 <script>
 $(document).ready(function (){

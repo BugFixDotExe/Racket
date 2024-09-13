@@ -1,15 +1,14 @@
 .card-container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     padding: 20px;
-    height: 1915px;
+    height: 5990px;
 }
 
 body {
-    background-color: #021526;
-    color: #FFF;
-    margin: 0;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(13,13,13,1) 100%);
     align-items: center;
 }
 

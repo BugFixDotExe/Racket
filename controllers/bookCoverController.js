@@ -2,15 +2,16 @@
 const dbConnection = require('../models/database/dbConnectionAndController');
 const crypto = require('crypto');
 
-exports.getCover = async function fetchBookCover(gemeniResponseObject) {
+exports.getCover = async function fetchBookCover(user_prompt, gemeniResponseObject) {
     const gemeniResponseObjectUrlIncluded = [];
 
     for (let index = 0; index < gemeniResponseObject.length; index++) {
-        const bookTitle = gemeniResponseObject[index].title.replaceAll(' ',  '+');
-        const bookAuthor = gemeniResponseObject[index].author.replaceAll(' ',  '+');
+        console.log(gemeniResponseObject[index]);
+        const bookTitle = gemeniResponseObject[index].title.replace(/ /g, '+');
+        const bookAuthor = gemeniResponseObject[index].author.replace(/ /g, '+');
         gemeniResponseObject[index].book_id = crypto.randomUUID();
         try {
-            // Fetchin the API needed for the Book cover
+            // Using the API needed for the Book cover
             const bookCoverUrl = `https://bookcover.longitood.com/bookcover?book_title=${bookTitle}&author_name=${bookAuthor}`;
             const gotResponse = await fetch(bookCoverUrl);
 
@@ -26,6 +27,7 @@ exports.getCover = async function fetchBookCover(gemeniResponseObject) {
         }
         gemeniResponseObjectUrlIncluded.push(gemeniResponseObject[index]);
     }
-    await dbConnection.insertItem(gemeniResponseObjectUrlIncluded);
+    // Here is where the db is called for saving purpose.
+    await dbConnection.insertItem(user_prompt, gemeniResponseObjectUrlIncluded);
     return gemeniResponseObjectUrlIncluded;
 };
